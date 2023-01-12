@@ -33,7 +33,7 @@ class ElsoKontrollerem extends Controller
 
     function FuggvenyResponse() {
         return response("<h1>Hiba történt a szerveren!<h1>", 525)
-                ->header('Content-Type', 'text/html');;
+                ->header('Content-Type', 'text/html');
     }
 
     function OsszetettEredmeny() {

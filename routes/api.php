@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ElsoKontrollerem;
+use App\Http\Controllers\Pilotak;
 
 /*
 |--------------------------------------------------------------------------
@@ -44,3 +45,12 @@ Route::post('PostParameteres2/{id}', [ElsoKontrollerem::class, 'FuggvenyKeres'])
 Route::post('PostParameteres3/{id}', [ElsoKontrollerem::class, 'FuggvenyKeres2']);
 
 Route::get('GetResponseOsztallyal', [ElsoKontrollerem::class, 'FuggvenyResponse']);
+
+
+/**/
+
+Route::get('pilotak', [Pilotak::class, 'Listazas']);
+Route::get('pilotak/{type}', [Pilotak::class, 'Listazas2']);
+
+Route::get('pilotakByModel', [Pilotak::class, 'modelLista']);
+Route::get('pilotakByModel/{ev}', [Pilotak::class, 'modelLista2']);
