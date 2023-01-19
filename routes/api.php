@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ElsoKontrollerem;
 use App\Http\Controllers\Pilotak;
+use App\Http\Controllers\VersenyController;
 
 /*
 |--------------------------------------------------------------------------
@@ -54,3 +55,8 @@ Route::get('pilotak/{type}', [Pilotak::class, 'Listazas2']);
 
 Route::get('pilotakByModel', [Pilotak::class, 'modelLista']);
 Route::get('pilotakByModel/{ev}', [Pilotak::class, 'modelLista2']);
+
+Route::resource('verseny', VersenyController::class);
+
+
+
