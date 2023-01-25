@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('versenyek', function (Blueprint $table) {
             $table->string('vkod', 3)->collation('utf8_hungarian_ci');
             $table->date('datum')->nullable();
-            $table->string('vnev', 18)->nullable()->collation('utf8_hungarian_ci');
+            $table->string('vnev', 100)->nullable()->collation('utf8_hungarian_ci');
             $table->string('hely', 14)->nullable()->collation('utf8_hungarian_ci');
             $table->integer('kor')->nullable();
             $table->integer('hossz')->nullable();

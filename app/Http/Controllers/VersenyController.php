@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Verseny;
 use App\Http\Requests\StoreVersenyRequest;
 use App\Http\Requests\UpdateVersenyRequest;
+use Illuminate\Support\Facades\DB;
 
 class VersenyController extends Controller
 {
@@ -44,8 +45,10 @@ class VersenyController extends Controller
         $seged->kor     = $request->kor;
         $seged->hossz   = $request->hossz;
 
+
         if ($seged->save()) {
-            return response()->json(array('success' => true, 'vkod' => $seged), 200);
+            //$utolsoelem =  DB::table('versenyek')->orderBy('vkod', 'desc')->first();
+            return response()->json(array('success' => true, 'vkod' => $seged->vkod), 200);
         }
     }
 
@@ -101,6 +104,6 @@ class VersenyController extends Controller
      */
     public function destroy(Verseny $verseny)
     {
-        //
+        return $verseny->delete();
     }
 }

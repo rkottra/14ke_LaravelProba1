@@ -56,6 +56,9 @@ Route::get('pilotak/{type}', [Pilotak::class, 'Listazas2']);
 Route::get('pilotakByModel', [Pilotak::class, 'modelLista']);
 Route::get('pilotakByModel/{ev}', [Pilotak::class, 'modelLista2']);
 
+
+/**/
+
 Route::resource('verseny', VersenyController::class);
 
 
